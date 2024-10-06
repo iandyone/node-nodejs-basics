@@ -9,7 +9,7 @@ const fileUrl = new URL(filePath, import.meta.url);
 const write = async () => {
   const writableStream = fs.createWriteStream(fileUrl, { flags: 'a' });
 
-  await stream.pipeline(process.stdout, writableStream);
+  await stream.pipeline(process.stdin, writableStream);
 };
 
 await write();
